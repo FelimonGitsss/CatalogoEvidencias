@@ -1,0 +1,13 @@
+INSERT INTO `articulos-db`.`articulo` (`id_articulo`, `nombre`, `descripcion`, `precio`, `modelo`) VALUES ('589mjfu765', 'Sueter', 'Sueter de Algodon', '145.60', 'Unisex');
+INSERT INTO `articulos-db`.`articulo` (`id_articulo`, `nombre`, `descripcion`, `precio`, `modelo`) VALUES ('786nju8763', 'Pantalon', 'Ropa Mujer', '170.40', 'Chico');
+INSERT INTO `articulos-db`.`articulo` (`id_articulo`, `nombre`, `descripcion`, `precio`, `modelo`) VALUES ('128uyt098d', 'Chamarra', 'Hombre', '300.60', 'Piel');
+INSERT INTO `articulos-db`.`articulo` (`id_articulo`, `nombre`, `descripcion`, `precio`, `modelo`) VALUES ('234tre098t', 'Zapatos', 'Zapatos de cuero', '545.60', 'Piel');
+INSERT INTO `articulos-db`.`articulo` (`id_articulo`, `nombre`, `descripcion`, `precio`, `modelo`) VALUES ('234bgd768a', 'Gorra', 'Roja', '320.34', 'Chica');
+INSERT INTO `articulos-db`.`articulo` (`id_articulo`, `nombre`, `descripcion`, `precio`, `modelo`) VALUES ('834nhg987e', 'Lentes', 'Negros', '90.30', 'Fashion');
+INSERT INTO `articulos-db`.`articulo` (`id_articulo`, `nombre`, `descripcion`, `precio`, `modelo`) VALUES ('689kju765r', 'Chaleco', 'Algodon', '350.50', 'Mediano');
+INSERT INTO `articulos-db`.`articulo` (`id_articulo`, `nombre`, `descripcion`, `precio`, `modelo`) VALUES ('345mnh576i', 'Falda', 'Piel', '200.50', 'Chica');
+INSERT INTO `articulos-db`.`articulo` (`id_articulo`, `nombre`, `descripcion`, `precio`, `modelo`) VALUES ('987rte654u', 'Tenis', 'Jordan', '900.80', 'Collection');
+INSERT INTO `articulos-db`.`articulo` (`id_articulo`, `nombre`, `descripcion`, `precio`, `modelo`) VALUES ('890ytr765y', 'Pants', 'Algodon', '400.50', 'Grande');
+INSERT INTO `articulos-db`.`articulo` (`id_articulo`, `nombre`, `descripcion`, `precio`, `modelo`) VALUES ('846ejg098j', 'Cinturon', 'Piel', '300.40', 'Grande');
+INSERT INTO `articulos-db`.`articulo` (`id_articulo`, `nombre`, `descripcion`, `precio`, `modelo`) VALUES ('385jhe729d', 'Botas', 'Cafes Vaqueras', '1200.30', 'Vaqueras');
+INSERT INTO `articulos-db`.`articulo` (`id_articulo`, `nombre`, `descripcion`, `precio`, `modelo`) VALUES ('295jdt583v', 'Sandalias', 'Sandalias de mar', '310.00', 'Medianas');

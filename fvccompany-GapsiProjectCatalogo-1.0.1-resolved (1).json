@@ -1,0 +1,238 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Gapsi Proyecto Catalogo",
+    "description": "Catálogo de Articulos",
+    "version": "1.0.1"
+  },
+  "servers": [
+    {
+      "url": "https://abstract-dragon-450721-q3.uc.r.appspot.com",
+      "description": "Google Cloud Server for Gapsi Project"
+    }
+  ],
+  "paths": {
+    "/catalog/articles": {
+      "get": {
+        "summary": "Listar Articulos del Catalogo",
+        "description": "Devuelve la lista de todos los articulos.",
+        "responses": {
+          "200": {
+            "description": "Lista de articulos obtenida correctamente.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Article"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Crear un nuevo articulo",
+        "description": "Crea un nuevo articulo con la información proporcionada.",
+        "requestBody": {
+          "description": "Datos del articulo a crear.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ArticleInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Articulo creado correctamente.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Article"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/catalog/articles/{id}": {
+      "get": {
+        "summary": "Obtener articulo por ID",
+        "description": "Devuelve la información de un articulo específico.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Identificador único del articulo.",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Articulo encontrado.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Article"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Articulo No encontrado."
+          }
+        }
+      },
+      "put": {
+        "summary": "Actualizar articulo",
+        "description": "Actualiza la información de un articulo existente.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Identificador único del articulo.",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Datos actualizados del Articulo.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ArticleInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Articulo actualizado correctamente.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Article"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Articulo No encontrado."
+          }
+        }
+      },
+      "delete": {
+        "summary": "Eliminar Articulo",
+        "description": "Elimina un articulo existente.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Identificador único del articulo.",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Articulo eliminado correctamente (sin contenido)."
+          },
+          "404": {
+            "description": "Articulo no encontrado."
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Article": {
+        "required": [
+          "descripcion",
+          "id",
+          "modelo",
+          "nombre",
+          "precio"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "maxLength": 10,
+            "minLength": 1,
+            "type": "string",
+            "readOnly": true,
+            "example": "1mkgu7",
+            "default": "1"
+          },
+          "nombre": {
+            "maxLength": 20,
+            "minLength": 1,
+            "type": "string",
+            "readOnly": true,
+            "example": "perfume",
+            "default": "articulo"
+          },
+          "descripcion": {
+            "maxLength": 200,
+            "minLength": 1,
+            "type": "string",
+            "example": "Fragancia Italiana",
+            "default": "descripcion del articulo"
+          },
+          "precio": {
+            "multipleOf": 0.01,
+            "exclusiveMaximum": false,
+            "exclusiveMinimum": false,
+            "type": "number",
+            "format": "float",
+            "readOnly": true,
+            "example": 1.21,
+            "default": 1
+          },
+          "modelo": {
+            "maxLength": 10,
+            "minLength": 1,
+            "type": "string",
+            "example": "modelo"
+          }
+        }
+      },
+      "ArticleInput": {
+        "required": [
+          "descripcion",
+          "modelo"
+        ],
+        "type": "object",
+        "properties": {
+          "descripcion": {
+            "type": "string",
+            "description": "Descripcion del articulo."
+          },
+          "modelo": {
+            "type": "string",
+            "description": "Descripción del modelo del articulo"
+          }
+        }
+      }
+    }
+  }
+}
